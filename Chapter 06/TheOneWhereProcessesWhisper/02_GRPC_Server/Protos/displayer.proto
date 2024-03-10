@@ -1,0 +1,16 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "_02_GRPC_Server";
+
+service TimeDisplayer {
+    rpc DisplayTime (DisplayTimeRequest) returns (DisplayTimeReply);
+}
+
+message DisplayTimeRequest{
+    string name = 1;
+    bool wantsTime = 2;
+}
+
+message DisplayTimeReply{
+    string message = 1;
+}

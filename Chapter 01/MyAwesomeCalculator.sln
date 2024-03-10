@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAwesomeCalculator", "MyAwesomeCalculator\MyAwesomeCalculator.csproj", "{E64A01C4-D51C-4EFF-ABCE-C2ED866E9F37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathFunctions", "MathFunctions\MathFunctions.csproj", "{975E647E-A5D2-4D6F-9D20-AE93487365FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E64A01C4-D51C-4EFF-ABCE-C2ED866E9F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E64A01C4-D51C-4EFF-ABCE-C2ED866E9F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E64A01C4-D51C-4EFF-ABCE-C2ED866E9F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E64A01C4-D51C-4EFF-ABCE-C2ED866E9F37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{975E647E-A5D2-4D6F-9D20-AE93487365FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{975E647E-A5D2-4D6F-9D20-AE93487365FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{975E647E-A5D2-4D6F-9D20-AE93487365FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{975E647E-A5D2-4D6F-9D20-AE93487365FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8378AB6A-300A-424F-A3E8-DC7CB49680C7}
+	EndGlobalSection
+EndGlobal
