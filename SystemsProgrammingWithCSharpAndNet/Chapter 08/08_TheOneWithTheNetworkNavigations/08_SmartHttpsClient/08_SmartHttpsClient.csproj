@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Polly" Version="8.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\Extensions\ExtensionLibrary\ExtensionLibrary.csproj" />
   </ItemGroup>
 
