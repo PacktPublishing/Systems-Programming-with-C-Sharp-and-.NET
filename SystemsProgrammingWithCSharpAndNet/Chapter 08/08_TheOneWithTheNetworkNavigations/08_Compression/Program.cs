@@ -1,10 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using System.IO.Compression;
-using _08_Compression;
+﻿using _08_Compression;
 using ExtensionLibrary;
 
-"Hello World".Dump(ConsoleColor.Cyan);
 var message = "This is my message. It is " +
               "not too long, so compressing it " +
               "will not do much. However, I " +

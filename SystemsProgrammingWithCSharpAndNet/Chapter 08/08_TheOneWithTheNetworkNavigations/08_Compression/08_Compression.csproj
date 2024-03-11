@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Chapter 04\TheOneWithTheThreadTangles\ExtensionLibrary\ExtensionLibrary.csproj" />
+    <ProjectReference Include="..\..\..\Extensions\ExtensionLibrary\ExtensionLibrary.csproj" />
   </ItemGroup>
 
 </Project>
