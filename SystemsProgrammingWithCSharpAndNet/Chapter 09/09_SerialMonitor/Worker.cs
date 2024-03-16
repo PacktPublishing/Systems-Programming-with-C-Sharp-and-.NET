@@ -24,6 +24,10 @@ namespace _09_SerialMonitor
             _logger = logger;
             
             GetAvailableUsbDevices();
+            if (!string.IsNullOrEmpty(_comPortName))
+            {
+                StartSerialConnection();
+            }
             
             string queryInsert = "SELECT * FROM __InstanceCreationEvent WITHIN 1 " +
                            "WHERE TargetInstance ISA 'Win32_PnPEntity' " +
@@ -44,6 +48,7 @@ namespace _09_SerialMonitor
         private void HandleDeleteEvent(object sender, EventArrivedEventArgs e)
         {
             var newInstance = e.NewEvent["TargetInstance"] as ManagementBaseObject;
+            StopSerialConnection();
             _logger.LogInformation("COM port removed: {0}", newInstance["Caption"]);
             _deviceIsAvailable = false;
             _comPortName = string.Empty;
@@ -56,9 +61,12 @@ namespace _09_SerialMonitor
             // Get the matching COM port
 
             _comPortName= GetComPortName(newInstance["Caption"].ToString());
-
+            if(!String.IsNullOrEmpty(_comPortName))
+            {
+                StartSerialConnection();
+            }
             //SerialPort port = new SerialPort("COM4", 9600);
-            _deviceIsAvailable = true;
+            
             
         }
 
@@ -84,22 +92,35 @@ namespace _09_SerialMonitor
             var devices = searcher.Get();
             
             _deviceIsAvailable = (devices.Count > 0);
-            // Get the matching COM port
-            var firstDevice = devices.Cast<ManagementObject>().First();
-            _comPortName = GetComPortName(firstDevice["Caption"].ToString());
+            if (_deviceIsAvailable)
+            {
+                // Get the matching COM port
+                var firstDevice = devices.Cast<ManagementObject>().First();
+                _comPortName = GetComPortName(firstDevice["Caption"].ToString());
+            }
+            else
+            {
+                _comPortName = string.Empty;
+            }
 
         }
 
         private void StartSerialConnection()
         {
+            if(_serial != null) return;
+            
             _serial = new SerialPort(_comPortName, 9600);
             _serialConnected = true;
             _serial.Open();
             _serial.DataReceived += SerialOnDataReceived;
+
+            _deviceIsAvailable = true;
         }
 
         private void StopSerialConnection()
         {
+            _deviceIsAvailable = false;
+            
             if (_serial == null) return;
 
             if (_serial is { IsOpen: true })
@@ -108,10 +129,14 @@ namespace _09_SerialMonitor
             _serial.DataReceived -= SerialOnDataReceived;
             _serial.Dispose();
             _serial = null;
+            
+            
         }
         private void SerialOnDataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            throw new NotImplementedException();
+            var receivedByte = _serial.ReadByte();
+                
+            _logger.LogInformation($"Data received: {receivedByte}");
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)

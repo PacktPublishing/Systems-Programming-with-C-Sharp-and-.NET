@@ -35,11 +35,11 @@ void loop() {
     _prevResult = soundPinData;
     if(soundPinData == HIGH)
     {
-      Serial.print();
+      Serial.write(1);
       digitalWrite(LED_BUILTIN, HIGH);
     }    
     else{
-      Serial.println("We do not hear anything anymore...");
+      Serial.write(0);
       digitalWrite(LED_BUILTIN, LOW);
     }
     delay(100);
