@@ -1,6 +1,6 @@
 ﻿namespace _09_SerialMonitor;
 
-internal interface IComPortWatcher : IDisposable
+public interface IComPortWatcher : IDisposable
 {
     event EventHandler<ComPortChangedEventArgs>? ComportAddedEvent;
     event EventHandler<ComPortChangedEventArgs>? ComportDeletedEvent;

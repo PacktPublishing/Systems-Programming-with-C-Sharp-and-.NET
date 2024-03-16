@@ -2,8 +2,10 @@
 
 namespace _09_SerialMonitor;
 
-internal interface IAsyncSerial
+public interface IAsyncSerial
 {
+    bool IsOpen { get; }
+
     void Open(string portName,
         int baudRate = 9600,
         Parity parity = Parity.None,

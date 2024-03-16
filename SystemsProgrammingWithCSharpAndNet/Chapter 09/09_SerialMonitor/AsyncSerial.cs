@@ -4,8 +4,9 @@ namespace _09_SerialMonitor;
 
 internal class AsyncSerial : IAsyncSerial
 {
-    private bool _isOpen;
     private SerialPort? _serialPort;
+
+    public bool IsOpen { get; private set; }
 
     public void Open(
         string portName,
@@ -14,28 +15,30 @@ internal class AsyncSerial : IAsyncSerial
         int dataBits = 8,
         StopBits stopBits = StopBits.One)
     {
-        if (_isOpen) throw new InvalidOperationException("Serial port is already open");
+        if (IsOpen) throw new InvalidOperationException("Serial port is already open");
 
         _serialPort = new SerialPort(portName, baudRate, parity, dataBits, stopBits);
         _serialPort.Open();
 
-        _isOpen = true;
+        IsOpen = true;
     }
 
     public void Close()
     {
-        if (!_isOpen) throw new InvalidOperationException("Serial port is not open");
+        if (!IsOpen) throw new InvalidOperationException("Serial port is not open");
 
         _serialPort?.Close();
         _serialPort?.Dispose();
         _serialPort = null;
+
+        IsOpen = false;
     }
 
     public Task<byte> ReadByteAsync(CancellationToken stoppingToken)
     {
         return Task.Run(() =>
         {
-            if (!_isOpen) throw new InvalidOperationException("Serial port is not open");
+            if (!IsOpen) throw new InvalidOperationException("Serial port is not open");
             var buffer = new byte[1];
             try
             {
