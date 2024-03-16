@@ -1,172 +1,99 @@
-using System.Globalization;
-using System.IO.Ports;
-using System.Management;
-using System.Text.RegularExpressions;
+using ExtensionLibrary;
 
 #pragma warning disable CA1416
 
-namespace _09_SerialMonitor
+namespace _09_SerialMonitor;
+
+public class Worker : BackgroundService
 {
-    public class Worker : BackgroundService
+
+    private readonly IComPortWatcher _comPortWatcher = new ComPortWatcher();
+    private readonly ILogger<Worker> _logger;
+    private string _comPortName;
+
+    private bool _deviceIsAvailable;
+
+    private IAsyncSerial? _serial;
+
+    public Worker(ILogger<Worker> logger)
     {
-        private readonly ILogger<Worker> _logger;
-        private ManagementEventWatcher _comPortInsertedWatcher;
-        private readonly ManagementEventWatcher _comPortDeletedWatcher;
+        _logger = logger;
 
-        private bool _deviceIsAvailable = false;
-        private string _comPortName = string.Empty;
+        _comPortName = _comPortWatcher.GetAvailableComPorts();
+        _deviceIsAvailable = !string.IsNullOrWhiteSpace(_comPortName);
 
-        private bool _serialConnected = false;
-        private SerialPort? _serial;
+        _comPortWatcher.ComportAddedEvent += HandleInsertEvent;
+        _comPortWatcher.ComportDeletedEvent += HandleDeleteEvent;
+        _comPortWatcher.Start();
         
-        public Worker(ILogger<Worker> logger)
+        if (_deviceIsAvailable) StartSerialConnection();
+    }
+
+
+    private void HandleInsertEvent(object? sender, ComPortChangedEventArgs e)
+    {
+        _comPortName = e.ComPortName;
+        
+        _logger.LogInformation($"New COM port detected: {_comPortName}");
+        if (!string.IsNullOrEmpty(_comPortName)) StartSerialConnection();
+    }
+
+    private void HandleDeleteEvent(object? sender, ComPortChangedEventArgs e)
+    {
+        StopSerialConnection();
+        
+        _logger.LogInformation($"COM port removed: {e.ComPortName}");
+
+        _comPortName = string.Empty;
+        _deviceIsAvailable = false;
+    }
+
+    private void StartSerialConnection()
+    {
+        if (_serial != null) return;
+
+        _serial = new AsyncSerial();
+        _serial.Open(_comPortName);
+
+        _deviceIsAvailable = true;
+    }
+
+    private void StopSerialConnection()
+    {
+        _deviceIsAvailable = false;
+        if (_serial == null) return;
+        _serial.Close();
+        _serial = null;
+    }
+
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        "Before the loop".Dump();
+
+        while (!stoppingToken.IsCancellationRequested)
         {
-            _logger = logger;
-            
-            GetAvailableUsbDevices();
-            if (!string.IsNullOrEmpty(_comPortName))
-            {
-                StartSerialConnection();
-            }
-            
-            string queryInsert = "SELECT * FROM __InstanceCreationEvent WITHIN 1 " +
-                           "WHERE TargetInstance ISA 'Win32_PnPEntity' " +
-                           "AND TargetInstance.Caption  LIKE '%Arduino%'";
-            string queryDelete = "SELECT * FROM __InstanceDeletionEvent WITHIN 1 " +
-                            "WHERE TargetInstance ISA 'Win32_PnPEntity' " +
-                            "AND TargetInstance.Caption  LIKE '%Arduino%'";
-            
-            _comPortInsertedWatcher = new ManagementEventWatcher(queryInsert);
-            _comPortInsertedWatcher.EventArrived += HandleInsertEvent;
-            _comPortInsertedWatcher.Start();
-            
-            _comPortDeletedWatcher = new ManagementEventWatcher(queryDelete);
-            _comPortDeletedWatcher.EventArrived += HandleDeleteEvent;
-            _comPortDeletedWatcher.Start();
-        }
-
-        private void HandleDeleteEvent(object sender, EventArrivedEventArgs e)
-        {
-            var newInstance = e.NewEvent["TargetInstance"] as ManagementBaseObject;
-            StopSerialConnection();
-            _logger.LogInformation("COM port removed: {0}", newInstance["Caption"]);
-            _deviceIsAvailable = false;
-            _comPortName = string.Empty;
-        }
-
-        private void HandleInsertEvent(object sender, EventArrivedEventArgs e)
-        {
-            var newInstance = e.NewEvent["TargetInstance"] as ManagementBaseObject;
-            _logger.LogInformation("New COM port detected: {0}", newInstance["Caption"]);
-            // Get the matching COM port
-
-            _comPortName= GetComPortName(newInstance["Caption"].ToString());
-            if(!String.IsNullOrEmpty(_comPortName))
-            {
-                StartSerialConnection();
-            }
-            //SerialPort port = new SerialPort("COM4", 9600);
-            
-            
-        }
-
-        private string GetComPortName(string foundCaption)
-        {
-            string foundComPort = string.Empty;
-            var regExPattern = @"(COM\d+)";
-            var match = Regex.Match(foundCaption, regExPattern);
-            if (match.Success)
-            {
-                var comPort = match.Groups[1].Value;
-                _logger.LogInformation("COM port: {0}", comPort);
-                foundComPort= match.Value;
-            }
-
-            return foundComPort;
-        }
-
-        private void GetAvailableUsbDevices()
-        {
-            //var searcher = new ManagementObjectSearcher(@"Select * From Win32_PnPEntity Where DeviceID Like 'USB%'");
-            var searcher = new ManagementObjectSearcher(@"Select * From Win32_PnPEntity Where Caption Like '%Arduino%'");
-            var devices = searcher.Get();
-            
-            _deviceIsAvailable = (devices.Count > 0);
             if (_deviceIsAvailable)
             {
-                // Get the matching COM port
-                var firstDevice = devices.Cast<ManagementObject>().First();
-                _comPortName = GetComPortName(firstDevice["Caption"].ToString());
-            }
-            else
-            {
-                _comPortName = string.Empty;
-            }
-
-        }
-
-        private void StartSerialConnection()
-        {
-            if(_serial != null) return;
-            
-            _serial = new SerialPort(_comPortName, 9600);
-            _serialConnected = true;
-            _serial.Open();
-            _serial.DataReceived += SerialOnDataReceived;
-
-            _deviceIsAvailable = true;
-        }
-
-        private void StopSerialConnection()
-        {
-            _deviceIsAvailable = false;
-            
-            if (_serial == null) return;
-
-            if (_serial is { IsOpen: true })
-                _serial.Close();
-
-            _serial.DataReceived -= SerialOnDataReceived;
-            _serial.Dispose();
-            _serial = null;
-            
-            
-        }
-        private void SerialOnDataReceived(object sender, SerialDataReceivedEventArgs e)
-        {
-            var receivedByte = _serial.ReadByte();
-                
-            _logger.LogInformation($"Data received: {receivedByte}");
-        }
-
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-        {
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                //if (_logger.IsEnabled(LogLevel.Information))
-                //{
-                //    _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                //}
-
-                if (_deviceIsAvailable)
+                var receivedByte = await _serial?.ReadByteAsync(stoppingToken);
+                if (receivedByte == 0xFF)
                 {
-                    
+                    StopSerialConnection();
+                    _logger.LogWarning("Device is ejected.");
                 }
-                await Task.Delay(10, stoppingToken);
-                
+                else
+                    _logger.LogInformation($"Data received: {receivedByte:X}");
             }
-        }
 
-        public override void Dispose()
-        {
-            _comPortInsertedWatcher.Stop();
-            _comPortInsertedWatcher.Dispose();
-            
-            _comPortDeletedWatcher.Stop();
-            _comPortDeletedWatcher.Dispose();
-
-            base.Dispose();
-            
+            await Task.Delay(10, stoppingToken);
         }
+    }
+
+    public override void Dispose()
+    {
+        _comPortWatcher.Stop();
+        _comPortWatcher.ComportAddedEvent -= HandleInsertEvent;
+        _comPortWatcher.ComportDeletedEvent -= HandleDeleteEvent;
+        _comPortWatcher.Dispose();
+        base.Dispose();
     }
 }

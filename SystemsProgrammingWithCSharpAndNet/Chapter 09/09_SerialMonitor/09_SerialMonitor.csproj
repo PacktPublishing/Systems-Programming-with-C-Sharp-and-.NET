@@ -13,4 +13,8 @@
     <PackageReference Include="System.IO.Ports" Version="8.0.0" />
     <PackageReference Include="System.Management" Version="8.0.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Extensions\ExtensionLibrary\ExtensionLibrary.csproj" />
+  </ItemGroup>
 </Project>
