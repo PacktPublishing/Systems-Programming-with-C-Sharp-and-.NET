@@ -6,6 +6,5 @@ public interface IComPortWatcher : IDisposable
     event EventHandler<ComPortChangedEventArgs>? ComportDeletedEvent;
     void Start();
     void Stop();
-
-    string GetAvailableComPorts();
+    string FindMatchingComPort(string partialMatch);
 }

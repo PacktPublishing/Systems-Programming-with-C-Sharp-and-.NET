@@ -15,13 +15,15 @@ public class Worker : BackgroundService
     private bool _deviceIsAvailable;
 
 
-    public Worker(ILogger<Worker> logger, IAsyncSerial serial, IComPortWatcher comPortWatcher)
+    public Worker(ILogger<Worker> logger, 
+        IAsyncSerial serial, 
+        IComPortWatcher comPortWatcher)
     {
         _logger = logger;
         _serial = serial;
         _comPortWatcher = comPortWatcher;
 
-        _comPortName = _comPortWatcher.GetAvailableComPorts();
+        _comPortName = _comPortWatcher.FindMatchingComPort("Arduino");
         _deviceIsAvailable = !string.IsNullOrWhiteSpace(_comPortName);
 
         _comPortWatcher.ComportAddedEvent += HandleInsertEvent;
@@ -55,9 +57,6 @@ public class Worker : BackgroundService
         if (_serial.IsOpen)
             return;
 
-        //if (_serial != null) return;
-
-        //_serial = new AsyncSerial();
         _serial.Open(_comPortName);
 
         _deviceIsAvailable = true;

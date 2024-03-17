@@ -17,4 +17,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Extensions\ExtensionLibrary\ExtensionLibrary.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
 </Project>

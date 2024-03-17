@@ -17,7 +17,12 @@ internal class AsyncSerial : IAsyncSerial
     {
         if (IsOpen) throw new InvalidOperationException("Serial port is already open");
 
-        _serialPort = new SerialPort(portName, baudRate, parity, dataBits, stopBits);
+        _serialPort = new SerialPort(
+            portName, 
+            baudRate, 
+            parity, 
+            dataBits, 
+            stopBits);
         _serialPort.Open();
 
         IsOpen = true;

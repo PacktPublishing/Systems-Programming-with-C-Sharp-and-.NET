@@ -54,17 +54,17 @@ internal class ComPortWatcher : IComPortWatcher
         _isRunning = false;
     }
 
-    public string GetAvailableComPorts()
+    public string FindMatchingComPort(string partialMatch)
     {
         string comPortName;
 
-        var searcher = new ManagementObjectSearcher(@"Select * From Win32_PnPEntity Where Caption Like '%Arduino%'");
+        var searcher = new ManagementObjectSearcher(
+            @$"Select * From Win32_PnPEntity Where Caption Like '%{partialMatch}%'");
         var devices = searcher.Get();
 
         var deviceIsAvailable = devices.Count > 0;
         if (deviceIsAvailable)
         {
-            // Get the matching COM port
             var firstDevice = devices.Cast<ManagementObject>().First();
             comPortName = GetComPortName(firstDevice["Caption"].ToString());
         }
