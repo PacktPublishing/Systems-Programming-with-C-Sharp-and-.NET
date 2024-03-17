@@ -31,12 +31,8 @@ internal class FakeComPortWatcher : IComPortWatcher
             {
                 ComportAddedEvent?.Invoke(this, new ComPortChangedEventArgs("COM4"));
             }
-
             _deviceIsAvailable = !_deviceIsAvailable;
-
         };
-        
-        
         _timer.Start();
     }
 
