@@ -69,9 +69,7 @@ public class Worker : BackgroundService
         if (!_serial.IsOpen)
             return;
 
-        //if (_serial == null) return;
         _serial.Close();
-        //_serial = null;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
