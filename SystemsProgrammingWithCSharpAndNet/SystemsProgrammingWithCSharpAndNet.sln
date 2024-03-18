@@ -45,6 +45,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_SmartHttpsClient", "Chap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_SerialMonitor", "Chapter 09\09_SerialMonitor\09_SerialMonitor.csproj", "{58A81D09-C176-4D69-AEAE-B769E5CA9720}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_DistanceCalculator", "Chapter 09\09_DistanceCalculator\09_DistanceCalculator.csproj", "{E974F359-E14F-48BF-B249-D367C9BC0316}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{58A81D09-C176-4D69-AEAE-B769E5CA9720}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58A81D09-C176-4D69-AEAE-B769E5CA9720}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58A81D09-C176-4D69-AEAE-B769E5CA9720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E974F359-E14F-48BF-B249-D367C9BC0316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E974F359-E14F-48BF-B249-D367C9BC0316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E974F359-E14F-48BF-B249-D367C9BC0316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E974F359-E14F-48BF-B249-D367C9BC0316}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +107,7 @@ Global
 		{2208E724-44E8-444C-83D4-2C40A98FF1EE} = {D933ED49-432F-4B5B-9896-048E71C12AC4}
 		{627CEE1A-7F88-4876-AD6E-FFB87817DB21} = {D933ED49-432F-4B5B-9896-048E71C12AC4}
 		{58A81D09-C176-4D69-AEAE-B769E5CA9720} = {4317F1D2-73D7-4481-885B-45BBDCA9B04C}
+		{E974F359-E14F-48BF-B249-D367C9BC0316} = {4317F1D2-73D7-4481-885B-45BBDCA9B04C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D5B666F9-05D9-4640-AA94-73A43170E1EA}
