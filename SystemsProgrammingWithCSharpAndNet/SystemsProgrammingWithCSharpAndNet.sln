@@ -43,7 +43,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_SMTPSample", "Chapter 08
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_SmartHttpsClient", "Chapter 08\08_TheOneWithTheNetworkNavigations\08_SmartHttpsClient\08_SmartHttpsClient.csproj", "{627CEE1A-7F88-4876-AD6E-FFB87817DB21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_SerialMonitor", "Chapter 09\09_SerialMonitor\09_SerialMonitor.csproj", "{58A81D09-C176-4D69-AEAE-B769E5CA9720}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_SerialMonitor", "Chapter 09\09_SerialMonitor\09_SerialMonitor.csproj", "{58A81D09-C176-4D69-AEAE-B769E5CA9720}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
