@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "10_Logging_Default": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "development"
+      }
+    }
+  }
+}
