@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using _10_Logging_Default.Level1;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
@@ -15,12 +16,15 @@ var loggerFactory = LoggerFactory.Create(builder =>
 });
 
 var logger = loggerFactory.CreateLogger<Program>();
-while (true)
-{
+//while (true)
+//{
     logger.LogInformation("This is information");
     logger.LogWarning("This is a warning");
     logger.LogTrace("This is a trace message");
     logger.LogError("This is an error");
     logger.LogCritical("This is a critical message");
-    await Task.Delay(1000);
-}
+//    await Task.Delay(1000);
+//}
+
+var sc = new SomeClass(logger);
+sc.DoIt();
