@@ -7,8 +7,8 @@ var logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
     .WriteTo.Console()
     .WriteTo.File(
-        new JsonFormatter(".", true),
-        "logs\\log.txt",
+        new JsonFormatter(),
+        "logs\\log.json",
         rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
