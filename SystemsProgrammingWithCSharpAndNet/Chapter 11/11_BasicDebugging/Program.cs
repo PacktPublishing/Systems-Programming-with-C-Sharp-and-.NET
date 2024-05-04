@@ -12,7 +12,7 @@ using Timer = System.Timers.Timer;
 //});
 
 var inThreadCounter = 0;
-var timer = new Timer(100);
+var timer = new Timer(1000);
 timer.Elapsed += 
     (_, _) => 
     { 
@@ -23,6 +23,8 @@ timer.Start();
 var outThreadCounter = 0;
 while (true)
 {
-    $"In the main thread with counter {outThreadCounter++}".Dump();
+    var message = $"In the main thread with counter {outThreadCounter++}";
+    message.Dump(ConsoleColor.Cyan);
+   
     await Task.Delay(200);
 }
