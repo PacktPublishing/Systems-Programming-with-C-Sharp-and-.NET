@@ -1,13 +1,20 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using ExtensionLibrary;
-
-Console.WriteLine("Hello, World!");
+﻿using ExtensionLibrary;
 
 
-for (int i = 0; i < 10; i++)
+MyClass myClass = new MyClass();
+
+int anotherCounter = 0;
+for (int i = 0; i < 5; i++)
 {
     ThreadPool.QueueUserWorkItem(CallBack);
+    ThreadPool.QueueUserWorkItem(CallBackB);
+}
+int myNumber = 0;
+while (true)
+{
+    myClass.Counter++;
+    Console.WriteLine($"Counter {myClass.Counter++}");
+    await Task.Delay(100);
 }
 
 "Main thread".Dump(ConsoleColor.Cyan);
@@ -31,10 +38,33 @@ return;
 
 void CallBack(object? _)
 {
+    var rnd =  new Random();
+    var randomDelay = rnd.Next(100, 1000);
     int internalCounter = 0;
     while (true)
     {
+        
         $"In the thread {Thread.CurrentThread.ManagedThreadId} as {DateTime.Now}\nWith Counter {internalCounter++}".Dump(ConsoleColor.Yellow);
-        Thread.Sleep(500);
+        myClass.Counter += rnd.Next(1, 5);
+        Thread.Sleep(randomDelay);
     }
+    
+}
+
+void CallBackB(object? _)
+{
+    var rnd = new Random();
+    var randomDelay = rnd.Next(100, 1000);
+
+    int internalCounter = 0;
+    while (true)
+    {
+        $"In the thread B {Thread.CurrentThread.ManagedThreadId} as {DateTime.Now}\nWith Counter {internalCounter++}".Dump(ConsoleColor.Yellow);
+        Thread.Sleep(randomDelay);
+    }
+}
+
+internal class MyClass
+{
+    public int Counter { get; set; }
 }
