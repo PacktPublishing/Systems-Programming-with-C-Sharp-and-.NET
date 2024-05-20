@@ -59,6 +59,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11_BasicDebugging", "Chapte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_MultiThreaded", "Chapter 11\11_MultiThreaded\11_MultiThreaded.csproj", "{6A864DC9-5A26-4D8D-8B3B-CAED23E30987}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_Profiling", "Chapter 11\11_Profiling\11_Profiling.csproj", "{4B4DDBC8-9AA3-4FEA-A55E-BFAFF2CFA288}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{6A864DC9-5A26-4D8D-8B3B-CAED23E30987}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A864DC9-5A26-4D8D-8B3B-CAED23E30987}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A864DC9-5A26-4D8D-8B3B-CAED23E30987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B4DDBC8-9AA3-4FEA-A55E-BFAFF2CFA288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B4DDBC8-9AA3-4FEA-A55E-BFAFF2CFA288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B4DDBC8-9AA3-4FEA-A55E-BFAFF2CFA288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B4DDBC8-9AA3-4FEA-A55E-BFAFF2CFA288}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +156,7 @@ Global
 		{254B1931-3C2D-40C5-9564-CD1A2BD47691} = {29B96413-3364-4267-A464-E58A05494E56}
 		{2AB75FE9-EC93-4D1F-975F-412D87F55828} = {7B8917F6-C940-4A77-B2DF-1DDE4CE3149D}
 		{6A864DC9-5A26-4D8D-8B3B-CAED23E30987} = {7B8917F6-C940-4A77-B2DF-1DDE4CE3149D}
+		{4B4DDBC8-9AA3-4FEA-A55E-BFAFF2CFA288} = {7B8917F6-C940-4A77-B2DF-1DDE4CE3149D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D5B666F9-05D9-4640-AA94-73A43170E1EA}
