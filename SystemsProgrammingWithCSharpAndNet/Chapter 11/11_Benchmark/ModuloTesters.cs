@@ -2,7 +2,7 @@
 
 namespace _11_Benchmark;
 
-public class ModuleTesters
+public class ModuloTesters
 {
     private const int testNumber = 400;
     private const int numberOfLoopCount = 100000;
