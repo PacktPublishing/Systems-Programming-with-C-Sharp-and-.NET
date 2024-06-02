@@ -3,8 +3,15 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+
+var myKeyFolder = Path.Combine(Directory.GetCurrentDirectory(), "MyKeys");
+if(!Directory.Exists(myKeyFolder))
+    Directory.CreateDirectory(myKeyFolder);
+
 var serviceCollection = new ServiceCollection();
-serviceCollection.AddDataProtection();
+serviceCollection
+    .AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo(myKeyFolder));
 var serviceProvider = serviceCollection.BuildServiceProvider();
 
 var dataProtector = serviceProvider.GetDataProtector("MySecureData");
@@ -36,5 +43,7 @@ File.WriteAllText("appsettings.json", json);
 configuration.Reload();
 var encryptedSection = configuration.GetSection("MySecretSettings");
 var someSecretValue = encryptedSection["MySecretSetting1"];
-var decryptedValue = dataProtector.Unprotect(someSecretValue);
+
+var secondProtector = serviceProvider.GetDataProtector("MySecureData");
+var decryptedValue = secondProtector.Unprotect(someSecretValue);
 $"Encrypted value was: {someSecretValue}\nDecrypted this becomes: {decryptedValue}".Dump();
