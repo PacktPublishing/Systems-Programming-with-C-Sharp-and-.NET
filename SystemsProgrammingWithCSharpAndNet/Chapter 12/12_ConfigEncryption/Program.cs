@@ -1,5 +1,4 @@
-﻿using System.Text.Json;
-using ExtensionLibrary;
+﻿using ExtensionLibrary;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
