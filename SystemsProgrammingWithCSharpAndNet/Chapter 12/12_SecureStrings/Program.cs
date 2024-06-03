@@ -18,7 +18,6 @@ return;
 void OverwriteAndClearString(ref string str)
 {
     if (str == null) return;
-
     unsafe
     {
         fixed (char* ptr = str)
