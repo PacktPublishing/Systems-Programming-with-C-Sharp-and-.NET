@@ -67,6 +67,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter12", "Chapter12", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_ConfigEncryption", "Chapter 12\12_ConfigEncryption\12_ConfigEncryption.csproj", "{F74911BB-B660-4602-884A-02F24B4214FB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_SecureStrings", "Chapter 12\12_SecureStrings\12_SecureStrings.csproj", "{3A170DC9-4533-4F39-BFDE-F695624B9F11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +151,10 @@ Global
 		{F74911BB-B660-4602-884A-02F24B4214FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F74911BB-B660-4602-884A-02F24B4214FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F74911BB-B660-4602-884A-02F24B4214FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A170DC9-4533-4F39-BFDE-F695624B9F11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A170DC9-4533-4F39-BFDE-F695624B9F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A170DC9-4533-4F39-BFDE-F695624B9F11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A170DC9-4533-4F39-BFDE-F695624B9F11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -173,6 +179,7 @@ Global
 		{4B4DDBC8-9AA3-4FEA-A55E-BFAFF2CFA288} = {7B8917F6-C940-4A77-B2DF-1DDE4CE3149D}
 		{EC5CD9C3-8508-4B7D-8F5E-A2BFA0C58C4A} = {7B8917F6-C940-4A77-B2DF-1DDE4CE3149D}
 		{F74911BB-B660-4602-884A-02F24B4214FB} = {B89911CF-041F-43C3-B49E-4D0A2A750549}
+		{3A170DC9-4533-4F39-BFDE-F695624B9F11} = {B89911CF-041F-43C3-B49E-4D0A2A750549}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D5B666F9-05D9-4640-AA94-73A43170E1EA}

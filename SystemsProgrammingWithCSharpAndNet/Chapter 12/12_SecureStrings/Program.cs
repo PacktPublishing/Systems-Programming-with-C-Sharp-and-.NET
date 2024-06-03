@@ -1,20 +1,34 @@
 ﻿
+using System.Net;
 using System.Security;
 using ExtensionLibrary;
 
-var normalString = "This is a string";
-
-SecureString secureString = new SecureString();
-for (var index = 0; index < normalString.Length; index++)
+var secureString = new SecureString();
+var sourceString = "MyPassword";
+foreach (var c in sourceString)
 {
-    var c = normalString[index];
     secureString.AppendChar(c);
 }
+secureString.MakeReadOnly();
 
-"String is loaded in memory".Dump();
+var nc = new NetworkCredential("myUserName", secureString, "MyDomain");
 
-"Done.".Dump();
-Console.ReadLine();
+return;
 
-$"Just for completeness: {normalString}".Dump();
-$"And this one: {secureString}".Dump();
+void OverwriteAndClearString(ref string str)
+{
+    if (str == null) return;
+
+    unsafe
+    {
+        fixed (char* ptr = str)
+        {
+            for (int i = 0; i < str.Length; i++)
+            {
+                ptr[i] = '\0'; // Overwrite with null characters
+            }
+        }
+    }
+
+    str = null; // Dereference the string
+}
