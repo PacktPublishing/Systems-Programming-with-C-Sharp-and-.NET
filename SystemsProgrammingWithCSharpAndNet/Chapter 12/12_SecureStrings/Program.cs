@@ -11,6 +11,7 @@ for (var index = 0; index < normalString.Length; index++)
     secureString.AppendChar(c);
 }
 
+"String is loaded in memory".Dump();
 
 "Done.".Dump();
 Console.ReadLine();

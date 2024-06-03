@@ -67,6 +67,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter12", "Chapter12", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_SecureStrings", "Chapter 12\12_SecureStrings\12_SecureStrings.csproj", "{ACA681C4-F4F2-4B88-93F6-205858F579C3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter12", "Chapter12", "{2F789511-7648-4EC0-A866-729675D0D1B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_SecureStrings", "Chapter 12\12_SecureStrings\12_SecureStrings.csproj", "{911EB3F7-9226-43BD-ACE4-407AB0BF8973}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_ConfigEncryption", "Chapter 12\12_ConfigEncryption\12_ConfigEncryption.csproj", "{F74911BB-B660-4602-884A-02F24B4214FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
