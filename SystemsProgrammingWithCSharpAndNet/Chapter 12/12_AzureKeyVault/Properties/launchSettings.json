@@ -3,11 +3,11 @@
     "12_AzureKeyVault": {
       "commandName": "Project",
       "environmentVariables": {
-        "_AZURE_CLIENT_ID": "354836dc-7165-4e86-a742-e8b62c050333",
-        "AZURE_CLIENT_ID": "7bce7159-ab26-4e79-aeb7-63aa3c4313bd",
-        "AZURE_CLIENT_SECRET": "EjU8Q~GOlm1DAlw.-DRPgpCE2BzegSa3lDISzarx",
-        "AZURE_TENANT_ID": "2afe6ced-40b8-4c3b-b779-3ce5270cb674",
-        "AZURE_CLIENT_SECRET_ID": "c49bbeed-ed66-4bef-86c0-2527c8377ab0"
+        "_AZURE_CLIENT_ID": "",
+        "AZURE_CLIENT_ID": "",
+        "AZURE_CLIENT_SECRET": "",
+        "AZURE_TENANT_ID": "",
+        "AZURE_CLIENT_SECRET_ID": ""
       }
     }
   }
