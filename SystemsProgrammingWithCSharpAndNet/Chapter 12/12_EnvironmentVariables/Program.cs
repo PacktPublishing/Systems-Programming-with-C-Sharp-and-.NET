@@ -1,6 +1,6 @@
 ﻿using ExtensionLibrary;
 
-"Hello".Dump();
+var mySecretdId = 
+    Environment.GetEnvironmentVariable("MY_GLOBAL_SECRET_ID");
+$"Found this in the registry: {mySecretdId}".Dump();
 
-var x = System.Environment.GetEnvironmentVariable("MY_VARIABLE");
-$"Found this in the registry: {x}".Dump();
