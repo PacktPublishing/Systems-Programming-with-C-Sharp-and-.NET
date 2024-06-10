@@ -78,15 +78,16 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_CodeSigningHost", "Chapter 12\12_CodeSigningHost\12_CodeSigningHost.csproj", "{5597D2B6-67AA-4B39-B62B-F436FE25A336}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Certificate", "Certificate", "{CCAEA62A-49FF-4FEC-A89E-CAAD3090607E}"
-	ProjectSection(SolutionItems) = preProject
-		Chapter 12\Certificate\MyKey.snk = Chapter 12\Certificate\MyKey.snk
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_FakeCodeSigningDll", "Chapter 12\12_FakeCodeSigningDll\12_FakeCodeSigningDll.csproj", "{5F8B94F6-2949-4888-B550-35A8D1B766A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_CodeSigningInterfaces", "Chapter 12\12_CodeSigningInterfaces\12_CodeSigningInterfaces.csproj", "{05AABAB2-B0B7-466F-A535-548711D7F2A9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_Impersonation", "Chapter 12\12_Impersonation\12_Impersonation.csproj", "{7F0CEDD0-92F4-4A92-9627-C97C502E8089}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_SecureSocketClient", "Chapter 12\12_SecureSocketClient\12_SecureSocketClient.csproj", "{A2CAEEF7-4E6F-4948-A094-57296875D71E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_SecureSocketServer", "Chapter 12\12_SecureSocketServer\12_SecureSocketServer.csproj", "{4B7C66D0-A77F-4682-8979-D4A837476010}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -202,6 +203,14 @@ Global
 		{7F0CEDD0-92F4-4A92-9627-C97C502E8089}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F0CEDD0-92F4-4A92-9627-C97C502E8089}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F0CEDD0-92F4-4A92-9627-C97C502E8089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2CAEEF7-4E6F-4948-A094-57296875D71E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2CAEEF7-4E6F-4948-A094-57296875D71E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2CAEEF7-4E6F-4948-A094-57296875D71E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2CAEEF7-4E6F-4948-A094-57296875D71E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B7C66D0-A77F-4682-8979-D4A837476010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B7C66D0-A77F-4682-8979-D4A837476010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B7C66D0-A77F-4682-8979-D4A837476010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B7C66D0-A77F-4682-8979-D4A837476010}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -235,6 +244,8 @@ Global
 		{5F8B94F6-2949-4888-B550-35A8D1B766A6} = {B89911CF-041F-43C3-B49E-4D0A2A750549}
 		{05AABAB2-B0B7-466F-A535-548711D7F2A9} = {B89911CF-041F-43C3-B49E-4D0A2A750549}
 		{7F0CEDD0-92F4-4A92-9627-C97C502E8089} = {B89911CF-041F-43C3-B49E-4D0A2A750549}
+		{A2CAEEF7-4E6F-4948-A094-57296875D71E} = {B89911CF-041F-43C3-B49E-4D0A2A750549}
+		{4B7C66D0-A77F-4682-8979-D4A837476010} = {B89911CF-041F-43C3-B49E-4D0A2A750549}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D5B666F9-05D9-4640-AA94-73A43170E1EA}
