@@ -8,21 +8,28 @@ using ExtensionLibrary;
 
 namespace _12_SecureSocketServer;
 
-internal class SecureServer(
-    int port,
-    string certificatePath,
-    string certificatePassword)
+internal class SecureServer
 {
-    private readonly X509Certificate2 _serverCertificate = new X509Certificate2(
-        certificatePath,
-        certificatePassword);
+    private readonly X509Certificate2 _serverCertificate;
+
+    private readonly int _port;
+
+    public SecureServer(int port,
+        string certificatePath,
+        string certificatePassword)
+    {
+        _port = port;
+        _serverCertificate = new X509Certificate2(
+            certificatePath,
+            certificatePassword);
+    }
 
     public async Task StartAsync()
     {
         "Server is starting...".Dump();
-        var listener = new TcpListener(IPAddress.Any, port);
+        var listener = new TcpListener(IPAddress.Any, _port);
         listener.Start();
-        $"Server is listening on port {port}...".Dump();
+        $"Server is listening on port {_port}...".Dump();
 
         while (true)
         {

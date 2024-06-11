@@ -11,7 +11,9 @@ internal class SecureClient
     private readonly int _port;
     private readonly string _server;
 
-    public SecureClient(string server, int port)
+    public SecureClient(
+        string server, 
+        int port)
     {
         _server = server;
         _port = port;
