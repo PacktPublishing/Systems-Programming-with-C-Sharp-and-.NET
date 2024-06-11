@@ -6,8 +6,8 @@ using _12_SecureSocketServer;
 using ExtensionLibrary;
 
 "Server is starting...".Dump();
-var certificatePath = @"c:\temp\MyServerCert.pfx";
-var certificatePassword = "Welcome@1";
+var certificatePath = @"d:\temp\cert\Certificate\testcer.pfx";
+var certificatePassword = "password";
 
 var server = new SecureServer(8081, certificatePath, certificatePassword);
 await server.StartAsync();
