@@ -74,12 +74,25 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_EnvironmentVariables", "Chapter 12\12_EnvironmentVariables\12_EnvironmentVariables.csproj", "{6C6330AE-7CFB-4F09-9463-C13C6A68CA5B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Certificate", "Certificate", "{CCAEA62A-49FF-4FEC-A89E-CAAD3090607E}"
+	ProjectSection(SolutionItems) = preProject
+		Chapter 12\Certificate\MyKey.snk = Chapter 12\Certificate\MyKey.snk
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_Impersonation", "Chapter 12\12_Impersonation\12_Impersonation.csproj", "{7F0CEDD0-92F4-4A92-9627-C97C502E8089}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_SecureSocketClient", "Chapter 12\12_SecureSocketClient\12_SecureSocketClient.csproj", "{A2CAEEF7-4E6F-4948-A094-57296875D71E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_SecureSocketClient", "Chapter 12\12_SecureSocketClient\12_SecureSocketClient.csproj", "{A2CAEEF7-4E6F-4948-A094-57296875D71E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_SecureSocketServer", "Chapter 12\12_SecureSocketServer\12_SecureSocketServer.csproj", "{4B7C66D0-A77F-4682-8979-D4A837476010}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_SecureSocketServer", "Chapter 12\12_SecureSocketServer\12_SecureSocketServer.csproj", "{4B7C66D0-A77F-4682-8979-D4A837476010}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter13", "Chapter13", "{7F8A756D-51CF-4A02-A558-70693972C181}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13_WorkerForWix", "Chapter 13\13_WorkerForWix\13_WorkerForWix.csproj", "{1FBE7E5C-382B-4DF8-B549-461E24338ADC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13_WorkerForDocker", "Chapter 13\13_WorkerForDocker\13_WorkerForDocker.csproj", "{832CC242-FD62-4C83-A7A5-B152A34EEC77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13_ConsoleWithPublish", "Chapter 13\13_ConsoleWithPublish\13_ConsoleWithPublish.csproj", "{BECD4D74-7C07-43A4-9B15-52CDDA68A892}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13_ConsoleForClickOnce", "Chapter 13\13_ConsoleForClickOnce\13_ConsoleForClickOnce.csproj", "{1665943B-A0B0-4CB6-B4F4-7F5D0E677894}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -187,6 +200,22 @@ Global
 		{4B7C66D0-A77F-4682-8979-D4A837476010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B7C66D0-A77F-4682-8979-D4A837476010}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B7C66D0-A77F-4682-8979-D4A837476010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FBE7E5C-382B-4DF8-B549-461E24338ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FBE7E5C-382B-4DF8-B549-461E24338ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FBE7E5C-382B-4DF8-B549-461E24338ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FBE7E5C-382B-4DF8-B549-461E24338ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{832CC242-FD62-4C83-A7A5-B152A34EEC77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{832CC242-FD62-4C83-A7A5-B152A34EEC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{832CC242-FD62-4C83-A7A5-B152A34EEC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{832CC242-FD62-4C83-A7A5-B152A34EEC77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BECD4D74-7C07-43A4-9B15-52CDDA68A892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECD4D74-7C07-43A4-9B15-52CDDA68A892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECD4D74-7C07-43A4-9B15-52CDDA68A892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECD4D74-7C07-43A4-9B15-52CDDA68A892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1665943B-A0B0-4CB6-B4F4-7F5D0E677894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1665943B-A0B0-4CB6-B4F4-7F5D0E677894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1665943B-A0B0-4CB6-B4F4-7F5D0E677894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1665943B-A0B0-4CB6-B4F4-7F5D0E677894}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -218,6 +247,10 @@ Global
 		{7F0CEDD0-92F4-4A92-9627-C97C502E8089} = {B89911CF-041F-43C3-B49E-4D0A2A750549}
 		{A2CAEEF7-4E6F-4948-A094-57296875D71E} = {B89911CF-041F-43C3-B49E-4D0A2A750549}
 		{4B7C66D0-A77F-4682-8979-D4A837476010} = {B89911CF-041F-43C3-B49E-4D0A2A750549}
+		{1FBE7E5C-382B-4DF8-B549-461E24338ADC} = {7F8A756D-51CF-4A02-A558-70693972C181}
+		{832CC242-FD62-4C83-A7A5-B152A34EEC77} = {7F8A756D-51CF-4A02-A558-70693972C181}
+		{BECD4D74-7C07-43A4-9B15-52CDDA68A892} = {7F8A756D-51CF-4A02-A558-70693972C181}
+		{1665943B-A0B0-4CB6-B4F4-7F5D0E677894} = {7F8A756D-51CF-4A02-A558-70693972C181}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D5B666F9-05D9-4640-AA94-73A43170E1EA}
