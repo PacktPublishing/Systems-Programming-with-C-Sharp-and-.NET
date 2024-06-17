@@ -15,7 +15,9 @@ namespace _13_WorkerForWix
             {
                 if (_logger.IsEnabled(LogLevel.Information))
                 {
-                    _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+                    string variableValue = Environment.GetEnvironmentVariable("VARIABLE_NAME");
+                    
+                    _logger.LogInformation($"Worker running at: {DateTimeOffset.Now}, with variable {variableValue}" );
                 }
                 await Task.Delay(1000, stoppingToken);
             }
