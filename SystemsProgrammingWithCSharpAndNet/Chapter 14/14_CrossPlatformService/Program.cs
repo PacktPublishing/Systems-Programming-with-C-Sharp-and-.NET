@@ -1,7 +1,20 @@
 using _14_CrossPlatformService;
+using Mono.Unix;
+using Mono.Unix.Native;
 
-var builder = Host.CreateApplicationBuilder(args);
-builder.Services.AddHostedService<Worker>();
+public class Program
+{
+    private static ILogger<Program> _log;
 
-var host = builder.Build();
-host.Run();
+    public static void Main(string[] args)
+    {
+        
+        var builder = Host.CreateApplicationBuilder(args);
+        builder.Services.AddHostedService<Worker>();
+
+        var host = builder.Build();
+
+        host.Run();
+    }
+
+}
