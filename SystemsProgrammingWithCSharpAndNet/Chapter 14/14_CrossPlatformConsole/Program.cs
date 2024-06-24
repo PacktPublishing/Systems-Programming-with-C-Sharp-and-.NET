@@ -29,4 +29,5 @@ $"Current Path: {currentPath}".Dump(consoleColor);
 $"newPath: {newPath}".Dump(consoleColor);
 $"betterWay: {betterWay}".Dump(consoleColor);
 $"twoPaths: {twoPaths}".Dump(consoleColor);
+$"End of the output: {Environment.NewLine}".Dump(consoleColor);
 
