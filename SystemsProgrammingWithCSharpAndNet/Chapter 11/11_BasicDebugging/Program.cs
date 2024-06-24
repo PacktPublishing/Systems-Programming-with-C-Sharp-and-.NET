@@ -1,15 +1,6 @@
 ﻿using ExtensionLibrary;
 using Timer = System.Timers.Timer;
 
-//ThreadPool.QueueUserWorkItem(_ =>
-//{
-//    int inThreadCounter = 0;
-//    while (true)
-//    {
-//        $"In the thread with counter {inThreadCounter++}".Dump(ConsoleColor.Yellow);
-//        Thread.Sleep(100);
-//    }
-//});
 
 var inThreadCounter = 0;
 var timer = new Timer(1000);
