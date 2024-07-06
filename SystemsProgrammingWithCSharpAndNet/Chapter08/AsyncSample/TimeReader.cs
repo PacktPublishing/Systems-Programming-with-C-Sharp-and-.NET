@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Sockets;
 
-namespace _08_AsyncSample;
+namespace AsyncSample;
 
 internal class TimeReader
 {
@@ -39,16 +39,16 @@ internal class TimeReader
         var ipEndPoint = new IPEndPoint(addresses.AddressList[0], 123); // NTP uses port 123
 
         using (var socket = new Socket(
-                   AddressFamily.InterNetwork, 
-                   SocketType.Dgram, 
+                   AddressFamily.InterNetwork,
+                   SocketType.Dgram,
                    ProtocolType.Udp))
         {
             await socket.ConnectAsync(ipEndPoint);
             await socket.SendAsync(
-                new ArraySegment<byte>(ntpData), 
+                new ArraySegment<byte>(ntpData),
                 SocketFlags.None);
             await socket.ReceiveAsync(
-                new ArraySegment<byte>(ntpData), 
+                new ArraySegment<byte>(ntpData),
                 SocketFlags.None);
         }
 
@@ -81,9 +81,9 @@ internal class TimeReader
 
     private uint SwapEndian(ulong x)
     {
-        return (uint)((((x & 0x000000ff) << 24) +
-                       ((x & 0x0000ff00) << 8)) |
-                      ((x & 0x00ff0000) >> 8) |
-                      ((x & 0xff000000) >> 24));
+        return (uint)(((x & 0x000000ff) << 24) +
+                       ((x & 0x0000ff00) << 8) |
+                      (x & 0x00ff0000) >> 8 |
+                      (x & 0xff000000) >> 24);
     }
 }

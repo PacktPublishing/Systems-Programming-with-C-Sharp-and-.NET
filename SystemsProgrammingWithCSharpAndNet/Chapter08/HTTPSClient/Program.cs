@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using ExtensionLibrary;
+﻿using ExtensionLibrary;
 
 using var client = new HttpClient();
 try

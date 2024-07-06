@@ -1,5 +1,5 @@
-﻿using _08_SmartHttpsClient;
-using ExtensionLibrary;
+﻿using ExtensionLibrary;
+using SmartHttpsClient;
 using System.Net.NetworkInformation;
 
 // First, check to see if our network is healthy

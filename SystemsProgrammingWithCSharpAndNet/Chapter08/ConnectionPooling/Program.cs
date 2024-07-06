@@ -1,11 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using System.Net.Sockets;
-using _08_ConnectionPooling;
+﻿using ConnectionPooling;
 
 await using var connectionPool = new TcpClientConnectionPool();
 
-TcpClient? myConnection = connectionPool.GetConnection();
+var myConnection = connectionPool.GetConnection();
 try
 {
     var myBuffer = "Hello, World!"u8.ToArray();

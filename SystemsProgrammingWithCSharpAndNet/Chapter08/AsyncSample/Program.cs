@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using _08_AsyncSample;
+﻿using AsyncSample;
 using ExtensionLibrary;
 
 "Getting the current time...".Dump(ConsoleColor.Cyan);

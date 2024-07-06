@@ -13,7 +13,7 @@ mail.Body =
 // Create a multipart message
 
 var multipartMail = new MailMessage();
-multipartMail.From = new MailAddress("dennis@vroegop.org");
+multipartMail.From = new MailAddress("myaccount@mydomain.co.au");
 multipartMail.To.Add("dearreader@thisbook.com");
 multipartMail.Subject = "Hi there System Programmer!";
 
@@ -43,7 +43,7 @@ client.Port = 587;
 client.EnableSsl = true;
 client.Credentials =
     new NetworkCredential(
-        "dennis@vroegop.org",
+        "myaccount@mydomain.co.au",
         "MySuperSecretPassword");
 
 // Send the email!

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Net.Sockets;
 
-namespace _08_ConnectionPooling
+namespace ConnectionPooling
 {
     internal class TcpClientConnectionPool : IAsyncDisposable
     {
@@ -9,7 +9,7 @@ namespace _08_ConnectionPooling
         private readonly int _maxPoolSize = 10; // Example pool size
         public TcpClient? GetConnection()
         {
-            if (_availableConnections.TryTake(out TcpClient? client)) 
+            if (_availableConnections.TryTake(out TcpClient? client))
                 return client;
             if (_availableConnections.Count < _maxPoolSize)
             {

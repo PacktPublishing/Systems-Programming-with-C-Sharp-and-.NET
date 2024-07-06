@@ -1,32 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.IO.Compression;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace _08_Compression
+namespace Compression;
+
+internal class CompressionHelper
 {
-    internal class CompressionHelper
+    public byte[] Compress(string message)
     {
-        public byte[] Compress(string message)
-        {
-            var originalMessage = System.Text.Encoding.UTF8.GetBytes(message);
-            using var memoryStream = new System.IO.MemoryStream();
-            using var gzipStream = new System.IO.Compression.GZipStream(memoryStream, System.IO.Compression.CompressionMode.Compress);
-            gzipStream.Write(originalMessage, 0, originalMessage.Length);
-            gzipStream.Flush();
-            memoryStream.Flush();
-            return memoryStream.ToArray();
-        }
+        var originalMessage = Encoding.UTF8.GetBytes(message);
+        using var memoryStream = new MemoryStream();
+        using var gzipStream = new GZipStream(memoryStream, CompressionMode.Compress);
+        gzipStream.Write(originalMessage, 0, originalMessage.Length);
+        gzipStream.Flush();
+        memoryStream.Flush();
+        return memoryStream.ToArray();
+    }
 
-        public string Decompress(byte[] compressedMessage)
-        {
-            using var decompressedMemoryStream = new System.IO.MemoryStream(compressedMessage);
-            using var decompressionStream = new System.IO.Compression.GZipStream(decompressedMemoryStream, System.IO.Compression.CompressionMode.Decompress);
-            using var decompressedMemoryStreamCopy = new System.IO.MemoryStream();
-            decompressionStream.CopyTo(decompressedMemoryStreamCopy);
-            var decompressedMessage = decompressedMemoryStreamCopy.ToArray();
-            return System.Text.Encoding.UTF8.GetString(decompressedMessage);
-        }
+    public string Decompress(byte[] compressedMessage)
+    {
+        using var decompressedMemoryStream = new MemoryStream(compressedMessage);
+        using var decompressionStream = new GZipStream(decompressedMemoryStream, CompressionMode.Decompress);
+        using var decompressedMemoryStreamCopy = new MemoryStream();
+        decompressionStream.CopyTo(decompressedMemoryStreamCopy);
+        var decompressedMessage = decompressedMemoryStreamCopy.ToArray();
+        return Encoding.UTF8.GetString(decompressedMessage);
     }
 }

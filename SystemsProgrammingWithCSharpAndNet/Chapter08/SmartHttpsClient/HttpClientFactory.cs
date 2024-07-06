@@ -5,7 +5,7 @@ using Polly;
 using Polly.CircuitBreaker;
 using Polly.Retry;
 
-namespace _08_SmartHttpsClient
+namespace SmartHttpsClient
 {
     internal static class HttpClientFactory
     {
@@ -35,9 +35,9 @@ namespace _08_SmartHttpsClient
             _instance.DefaultRequestHeaders.Clear();
             _instance.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             _instance.DefaultRequestHeaders.Add("User-Agent", "SystemProgrammersApp");
-            
+
             _instance.Timeout = TimeSpan.FromSeconds(5);
-            
+
             // Set up Retry Policy
             SetupRetryPolicy();
             SetupCircuitBreakerPolicy();
@@ -49,7 +49,7 @@ namespace _08_SmartHttpsClient
                 .Handle<HttpRequestException>()
                 .OrResult<HttpResponseMessage>(r => !r.IsSuccessStatusCode)
                 .WaitAndRetryAsync(
-                    3, 
+                    3,
                     retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
                     (outcome, timeSpan, retryCount, context) =>
                     {
@@ -67,12 +67,12 @@ namespace _08_SmartHttpsClient
                 .CircuitBreakerAsync(2, TimeSpan.FromSeconds(2),
                     (result, timespan) =>
                     {
-                            $"Opening circuit for {timespan}. ExecutionResult: {result.Exception?.Message ?? result.Result.StatusCode.ToString()}".Dump(ConsoleColor.DarkYellow);
+                        $"Opening circuit for {timespan}. ExecutionResult: {result.Exception?.Message ?? result.Result.StatusCode.ToString()}".Dump(ConsoleColor.DarkYellow);
                     },
                     () => { "Circuit closed. Reset.".Dump(ConsoleColor.DarkYellow); },
                     () => { "Circuit half-open. Next call is a trial.".Dump(ConsoleColor.DarkYellow); });
         }
-        
+
         public static async Task<HttpResponseMessage> GetAsync(string url)
         {
             return await _retryPolicy.ExecuteAsync(

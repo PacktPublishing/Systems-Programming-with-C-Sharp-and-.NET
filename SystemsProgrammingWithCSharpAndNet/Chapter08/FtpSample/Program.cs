@@ -1,4 +1,4 @@
-﻿using _08_FtpSample;
+﻿using FtpSample;
 
 FtpClientNewStyle.FetchDirectoryContents("ftp://ftp.example.com", "username", "password");
 

@@ -1,7 +1,7 @@
 ﻿using ExtensionLibrary;
 using FluentFTP;
 
-namespace _08_FtpSample;
+namespace FtpSample;
 
 internal class FtpClientNewStyle
 {

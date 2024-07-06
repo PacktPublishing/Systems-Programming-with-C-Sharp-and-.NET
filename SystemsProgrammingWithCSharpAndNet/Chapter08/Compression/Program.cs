@@ -1,4 +1,4 @@
-﻿using _08_Compression;
+﻿using Compression;
 using ExtensionLibrary;
 
 var message = "This is my message. It is " +
