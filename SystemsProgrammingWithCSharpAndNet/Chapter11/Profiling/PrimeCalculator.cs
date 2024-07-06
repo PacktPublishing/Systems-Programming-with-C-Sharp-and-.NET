@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using ExtensionLibrary;
 
-namespace _11_Profiling;
+namespace Profiling;
 
 internal class PrimeCalculator
 {
@@ -41,8 +41,8 @@ internal class PrimeCalculator
     {
         if (number < 2) return false;
         if (number == 2) return true;
-        if( number % 2 == 0) return false;
-        
+        if (number % 2 == 0) return false;
+
         var upperBound = Math.Sqrt(number);
         for (var i = 2; i <= upperBound; i++)
             if (number % i == 0)

@@ -1,6 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-namespace _11_Benchmark;
+namespace Benchmark;
 
 public class ModuloTesters
 {

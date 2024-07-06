@@ -1,6 +1,4 @@
-﻿
-
-using _11_Profiling;
+﻿using Profiling;
 
 PrimeCalculator pc = new PrimeCalculator();
 pc.Run();

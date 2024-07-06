@@ -1,6 +1,6 @@
 ﻿using ExtensionLibrary;
 
-namespace _11_MultiThreaded
+namespace MultiThreaded
 {
     internal class VariableCheck
     {

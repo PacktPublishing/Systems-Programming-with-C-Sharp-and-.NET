@@ -1,5 +1,5 @@
-﻿using _11_MultiThreaded;
-using ExtensionLibrary;
+﻿using ExtensionLibrary;
+using MultiThreaded;
 
 Deadlock dl = new Deadlock();
 dl.Run();
