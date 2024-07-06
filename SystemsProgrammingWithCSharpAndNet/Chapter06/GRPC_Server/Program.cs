@@ -1,8 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using _02_GRPC_Server;
-using ExtensionLibrary;
+﻿using ExtensionLibrary;
 using Grpc.Core;
+using GRPC_Server;
 
 "Starting gRPC server...".Dump();
 var port = 50051;

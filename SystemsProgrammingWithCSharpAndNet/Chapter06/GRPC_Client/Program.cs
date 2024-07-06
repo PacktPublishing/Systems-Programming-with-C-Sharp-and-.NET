@@ -1,6 +1,6 @@
-﻿using _02_GRPC_Server;
-using ExtensionLibrary;
+﻿using ExtensionLibrary;
 using Grpc.Net.Client;
+using GRPC_Server;
 
 "Starting gRPC client... Press ENTER to connect.".Dump(ConsoleColor.Yellow);
 Console.ReadLine();

@@ -1,4 +1,4 @@
-﻿namespace _02_JSON_RPC.Commands
+﻿namespace JSON_RPC.Commands
 {
     [Serializable]
     internal class ShowDateCommand

@@ -1,12 +1,12 @@
 ﻿using ExtensionLibrary;
 using Grpc.Core;
 
-namespace _02_GRPC_Server;
+namespace GRPC_Server;
 
 internal class TimeDisplayerService : TimeDisplayer.TimeDisplayerBase
 {
     public override Task<DisplayTimeReply> DisplayTime(
-        DisplayTimeRequest request, 
+        DisplayTimeRequest request,
         ServerCallContext context)
     {
         var result = request.WantsTime

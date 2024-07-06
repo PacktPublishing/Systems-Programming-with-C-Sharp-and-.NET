@@ -1,11 +1,11 @@
 ﻿using System.IO.Pipes;
 using System.Text.Json;
-using _02_JSON_RPC.Commands;
 using ExtensionLibrary;
+using JSON_RPC.Commands;
 
-namespace _02_JSON_RPC;
+namespace JSON_RPC;
 
-internal class Client(CancellationToken cancellationToken) 
+internal class Client(CancellationToken cancellationToken)
 {
     public async Task StartClient()
     {

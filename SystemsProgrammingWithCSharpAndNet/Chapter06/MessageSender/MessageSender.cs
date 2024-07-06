@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ExtensionLibrary;
 
-namespace _01_MessageSender
+namespace MessageSender
 {
     internal class MessageSender
     {
@@ -16,7 +16,7 @@ namespace _01_MessageSender
         public static extern uint RegisterWindowMessage(string lpString);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        public static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+        public static extern nint SendMessage(nint hWnd, uint Msg, nint wParam, nint lParam);
 
         #endregion
 
@@ -27,7 +27,7 @@ namespace _01_MessageSender
             "Enter the window handle".Dump(ConsoleColor.DarkYellow);
             var windowHandle = Convert.ToInt32(Console.ReadLine());
 
-            SendMessage(windowHandle, myMessage, IntPtr.Zero, IntPtr.Zero);
+            SendMessage(windowHandle, myMessage, nint.Zero, nint.Zero);
 
             "Message has been sent".Dump(ConsoleColor.DarkYellow);
         }

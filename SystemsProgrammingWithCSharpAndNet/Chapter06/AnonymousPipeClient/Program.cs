@@ -1,7 +1,7 @@
 ﻿using System.IO.Pipes;
 using ExtensionLibrary;
 
-namespace _02_AnonymousPipeClient;
+namespace AnonymousPipeClient;
 
 internal class Program
 {

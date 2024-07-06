@@ -1,9 +1,9 @@
 ﻿using System.IO.Pipes;
 using System.Text.Json;
-using _02_JSON_RPC.Commands;
 using ExtensionLibrary;
+using JSON_RPC.Commands;
 
-namespace _02_JSON_RPC;
+namespace JSON_RPC;
 
 internal class Server(CancellationToken cancellationToken)
 {
@@ -20,7 +20,7 @@ internal class Server(CancellationToken cancellationToken)
             var line = await reader.ReadLineAsync();
             if (line == null) break;
             $"Received this command: {line}".Dump(ConsoleColor.Cyan);
-            
+
             var command = JsonSerializer.Deserialize<ShowDateCommand>(line);
             if (command is { IncludeTime: true })
                 DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss").Dump(ConsoleColor.Cyan);
