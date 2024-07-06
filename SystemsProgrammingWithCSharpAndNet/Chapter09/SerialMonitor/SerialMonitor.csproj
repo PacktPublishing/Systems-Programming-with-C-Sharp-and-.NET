@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-_09_SerialMonitor-0b74a661-6ae0-47f5-8b09-8057039712dd</UserSecretsId>
-    <RootNamespace>_09_SerialMonitor</RootNamespace>
+    <RootNamespace>SerialMonitor</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Extensions\ExtensionLibrary\ExtensionLibrary.csproj" />
+    <ProjectReference Include="..\ExtensionLibrary\ExtensionLibrary.csproj" />
   </ItemGroup>
 
 </Project>

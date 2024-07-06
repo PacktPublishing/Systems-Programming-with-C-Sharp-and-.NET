@@ -1,4 +1,4 @@
-﻿namespace _09_SerialMonitor;
+﻿namespace SerialMonitor;
 
 public interface IComPortWatcher : IDisposable
 {

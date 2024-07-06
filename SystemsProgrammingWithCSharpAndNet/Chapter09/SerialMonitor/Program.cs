@@ -1,8 +1,8 @@
 #define FAKESERIAL
 
 
-using _09_SerialMonitor;
-using _09_SerialMonitor.Fakes;
+using SerialMonitor;
+using SerialMonitor.Fakes;
 
 var builder = Host.CreateApplicationBuilder(args);
 

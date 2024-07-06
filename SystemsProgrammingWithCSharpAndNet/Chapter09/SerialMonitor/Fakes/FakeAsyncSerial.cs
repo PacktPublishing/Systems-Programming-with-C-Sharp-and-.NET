@@ -1,6 +1,6 @@
 ﻿using System.IO.Ports;
 
-namespace _09_SerialMonitor.Fakes;
+namespace SerialMonitor.Fakes;
 
 internal class FakeAsyncSerial : IAsyncSerial
 {
@@ -21,6 +21,6 @@ internal class FakeAsyncSerial : IAsyncSerial
 
     public Task<byte> ReadByteAsync(CancellationToken stoppingToken)
     {
-        return IsOpen? Task.FromResult((byte)1): Task.FromResult((byte)0);
+        return IsOpen ? Task.FromResult((byte)1) : Task.FromResult((byte)0);
     }
 }

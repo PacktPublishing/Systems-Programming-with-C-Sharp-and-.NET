@@ -1,6 +1,6 @@
 ﻿using System.IO.Ports;
 
-namespace _09_SerialMonitor;
+namespace SerialMonitor;
 
 internal class AsyncSerial : IAsyncSerial
 {
@@ -18,10 +18,10 @@ internal class AsyncSerial : IAsyncSerial
         if (IsOpen) throw new InvalidOperationException("Serial port is already open");
 
         _serialPort = new SerialPort(
-            portName, 
-            baudRate, 
-            parity, 
-            dataBits, 
+            portName,
+            baudRate,
+            parity,
+            dataBits,
             stopBits);
         _serialPort.Open();
 

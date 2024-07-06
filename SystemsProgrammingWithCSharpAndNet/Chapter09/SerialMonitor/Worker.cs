@@ -2,7 +2,7 @@ using ExtensionLibrary;
 
 #pragma warning disable CA1416
 
-namespace _09_SerialMonitor;
+namespace SerialMonitor;
 
 public class Worker : BackgroundService
 {
@@ -15,8 +15,8 @@ public class Worker : BackgroundService
     private bool _deviceIsAvailable;
 
 
-    public Worker(ILogger<Worker> logger, 
-        IAsyncSerial serial, 
+    public Worker(ILogger<Worker> logger,
+        IAsyncSerial serial,
         IComPortWatcher comPortWatcher)
     {
         _logger = logger;

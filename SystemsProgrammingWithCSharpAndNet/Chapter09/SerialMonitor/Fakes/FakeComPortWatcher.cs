@@ -2,7 +2,7 @@
 using Timer = System.Timers.Timer;
 
 
-namespace _09_SerialMonitor.Fakes;
+namespace SerialMonitor.Fakes;
 
 internal class FakeComPortWatcher : IComPortWatcher
 {
@@ -42,7 +42,7 @@ internal class FakeComPortWatcher : IComPortWatcher
         _timer?.Stop();
         _timer?.Dispose();
         _timer = null;
-        
+
     }
 
     public string FindMatchingComPort(string partialMatch)

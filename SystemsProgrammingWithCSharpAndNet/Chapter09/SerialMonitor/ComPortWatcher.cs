@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 #pragma warning disable CA1416
 
-namespace _09_SerialMonitor;
+namespace SerialMonitor;
 
 internal class ComPortWatcher : IComPortWatcher
 {
