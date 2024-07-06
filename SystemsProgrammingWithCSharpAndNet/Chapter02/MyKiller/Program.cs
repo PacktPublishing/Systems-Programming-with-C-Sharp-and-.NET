@@ -1,10 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using ExtensionLibrary;
 using MyKiller;
 
-Console.WriteLine("Press enter to kill the other app");
+"Press enter to kill the other app".Dump();
 
 Console.ReadLine();
 WindowFinder.KillWindow();
-Console.WriteLine("Verify if it is dead.");
+"Verify if it is dead.".Dump();
 
-Console.WriteLine("We are done");
+"We are done".Dump();
