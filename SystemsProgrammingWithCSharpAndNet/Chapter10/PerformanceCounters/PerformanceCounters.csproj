@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>_10_PerformanceCounters</RootNamespace>
+    <RootNamespace>PerformanceCounters</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Extensions\ExtensionLibrary\ExtensionLibrary.csproj" />
+    <ProjectReference Include="..\ExtensionLibrary\ExtensionLibrary.csproj" />
   </ItemGroup>
 
 </Project>

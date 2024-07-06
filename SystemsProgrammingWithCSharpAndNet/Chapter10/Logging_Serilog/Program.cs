@@ -1,5 +1,4 @@
 ﻿using Serilog;
-using Serilog.Enrichers;
 using Serilog.Formatting.Json;
 
 var logger = new LoggerConfiguration()
@@ -26,7 +25,6 @@ try
         "The user with userId {userId} logged in at {loggedInTime}",
         42,
         DateTime.UtcNow.TimeOfDay);
-
 }
 finally
 {
