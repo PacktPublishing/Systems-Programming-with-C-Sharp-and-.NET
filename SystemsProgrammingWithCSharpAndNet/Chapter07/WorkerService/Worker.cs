@@ -1,4 +1,4 @@
-namespace _07_WorkerService;
+namespace WorkerService;
 
 public class Worker : BackgroundService
 {
@@ -24,7 +24,7 @@ public class Worker : BackgroundService
             if (_counter++ >= 9) break;
         }
 
-        _logger.LogInformation("Worker stopped at: {time}", DateTimeOffset.Now); 
+        _logger.LogInformation("Worker stopped at: {time}", DateTimeOffset.Now);
         _hostApplicationLifetime.StopApplication();
     }
 }

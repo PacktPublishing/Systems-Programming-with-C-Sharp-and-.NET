@@ -4,10 +4,10 @@ using ExtensionLibrary;
 // This disables the warning about this code only being available on Windows.
 #pragma warning disable CA1416
 
-namespace _07_WMISamples.Samples
+namespace WMISamples.Samples
 {
     internal class BIOSReader
-        // ReSharper restore InconsistentNaming
+    // ReSharper restore InconsistentNaming
     {
         public void ReadBIOSDetails()
         {

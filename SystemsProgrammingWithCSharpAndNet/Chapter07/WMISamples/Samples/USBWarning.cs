@@ -9,7 +9,7 @@ using ExtensionLibrary;
 // This disables the warning about this code only being available on Windows.
 #pragma warning disable CA1416
 
-namespace _07_WMISamples.Samples
+namespace WMISamples.Samples
 {
     internal class USBWarning
     {
@@ -23,10 +23,10 @@ namespace _07_WMISamples.Samples
 
             // Start listening for events
             watcher.Start();
-            
+
             "Unplug a USB device to see the event.\nPress ENTER to exit.".Dump(ConsoleColor.Cyan);
             Console.ReadLine();
-            
+
             // Stop listening for events
             watcher.Stop();
         }
@@ -46,7 +46,7 @@ namespace _07_WMISamples.Samples
                 $"\n\t\tDeviceID={deviceID}" +
                 $"\n\t\tPNPDeviceID={pnpDeviceID}" +
                 $"\n\t\tDescription={description}";
-            
+
             message.Dump(ConsoleColor.Yellow);
         }
     }

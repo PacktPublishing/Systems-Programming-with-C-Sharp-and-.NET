@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-_07_WorkerService-27a831be-128d-4791-87ef-94e5b1e257ab</UserSecretsId>
-    <RootNamespace>_07_WorkerService</RootNamespace>
+    <RootNamespace>WorkerService</RootNamespace>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 

@@ -1,4 +1,4 @@
-using _07_WorkerService;
+using WorkerService;
 
 var builder = Host.CreateApplicationBuilder(args);
 builder.Services.AddHostedService<Worker>();

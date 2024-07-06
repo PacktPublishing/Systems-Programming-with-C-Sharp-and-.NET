@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using _07_WMISamples.Samples;
 using ExtensionLibrary;
+using WMISamples.Samples;
 
 //TemperatureReader temperatureReader = new TemperatureReader();
 //temperatureReader.ReadTemperaturesUsingMsAcpi();
