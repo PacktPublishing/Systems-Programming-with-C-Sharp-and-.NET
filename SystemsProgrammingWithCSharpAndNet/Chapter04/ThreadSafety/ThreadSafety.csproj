@@ -6,8 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-  
+
   <ItemGroup>
-    <ProjectReference Include="..\..\Extensions\ExtensionLibrary\ExtensionLibrary.csproj" />
-  </ItemGroup>
+    <ProjectReference Include="..\ExtensionLibrary\ExtensionLibrary.csproj" />
+  </ItemGroup>  
 </Project>

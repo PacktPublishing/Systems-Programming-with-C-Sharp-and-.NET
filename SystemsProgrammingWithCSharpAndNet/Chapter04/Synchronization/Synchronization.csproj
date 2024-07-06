@@ -8,9 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Extensions\ExtensionLibrary\ExtensionLibrary.csproj" />
+    <ProjectReference Include="..\ExtensionLibrary\ExtensionLibrary.csproj" />
   </ItemGroup>
-
-
 
 </Project>
