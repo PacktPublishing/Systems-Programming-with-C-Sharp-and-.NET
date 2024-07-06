@@ -1,5 +1,5 @@
 ﻿#pragma warning disable CA1416 // Validate platform compatibility
-namespace _03Security;
+namespace Security;
 
 internal class SecurityAnalyzer
 {

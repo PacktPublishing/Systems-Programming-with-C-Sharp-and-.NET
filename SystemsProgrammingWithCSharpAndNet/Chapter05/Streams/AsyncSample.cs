@@ -1,6 +1,6 @@
 ﻿using ExtensionLibrary;
 
-namespace _02Streams;
+namespace Streams;
 
 internal class AsyncSample
 {

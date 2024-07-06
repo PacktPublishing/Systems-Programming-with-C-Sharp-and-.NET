@@ -1,15 +1,15 @@
 ﻿using System.IO.Compression;
 
-namespace _02Streams
+namespace Streams
 {
     internal class Compression
     {
 
-        public async Task<byte[]> CompressString(string input, 
+        public async Task<byte[]> CompressString(string input,
             CancellationToken cancellationToken)
         {
             // Get the payload as bytes
-            byte[] data =  System.Text.Encoding.UTF8.GetBytes(input);
+            byte[] data = System.Text.Encoding.UTF8.GetBytes(input);
 
             // Compress to a MemoryStream
             await using var ms = new MemoryStream();
@@ -22,7 +22,7 @@ namespace _02Streams
         }
 
         // Decompress a string 
-        public async Task<string> DecompressString(byte[] input, 
+        public async Task<string> DecompressString(byte[] input,
             CancellationToken cancellationToken)
         {
             // Write the data into a memory stream

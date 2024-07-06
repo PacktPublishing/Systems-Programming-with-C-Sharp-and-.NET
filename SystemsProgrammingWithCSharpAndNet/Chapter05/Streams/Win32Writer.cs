@@ -2,7 +2,7 @@
 using System.Text;
 using Microsoft.Win32.SafeHandles;
 
-namespace _02Streams;
+namespace Streams;
 
 internal class Win32Writer
 {
@@ -15,10 +15,10 @@ internal class Win32Writer
         string lpFileName,
         uint dwDesiredAccess,
         uint dwShareMode,
-        IntPtr lpSecurityAttributes,
+        nint lpSecurityAttributes,
         uint dwCreationDisposition,
         uint dwFlagsAndAttributes,
-        IntPtr hTemplateFile);
+        nint hTemplateFile);
 
     [DllImport("kernel32.dll", SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]
@@ -27,7 +27,7 @@ internal class Win32Writer
         byte[] lpBuffer,
         uint nNumberOfBytesToWrite,
         out uint lpNumberOfBytesWritten,
-        IntPtr lpOverlapped);
+        nint lpOverlapped);
 
     [DllImport("kernel32.dll", SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]
@@ -40,10 +40,10 @@ internal class Win32Writer
             fileName,
             GENERIC_WRITE,
             0,
-            IntPtr.Zero,
+            nint.Zero,
             CREATE_ALWAYS,
             FILE_APPEND_DATA,
-            IntPtr.Zero);
+            nint.Zero);
 
         if (!fileHandle.IsInvalid)
             try
@@ -55,7 +55,7 @@ internal class Win32Writer
                     bytes,
                     (uint)bytes.Length,
                     out var bytesWritten,
-                    IntPtr.Zero);
+                    nint.Zero);
             }
             finally
             {

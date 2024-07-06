@@ -1,7 +1,6 @@
-﻿
-using ExtensionLibrary;
+﻿using ExtensionLibrary;
 
-namespace _02Streams;
+namespace Streams;
 
 internal class MyFolderWatcherWithFilteredCallback : IDisposable
 {
@@ -40,11 +39,11 @@ internal class MyFolderWatcherWithFilteredCallback : IDisposable
 
         // Now, we need to set up the cleaning thread.
         _cleanupTimer = new Timer(
-            _ => CleanupOldCalls(), 
-            null, 
-            TimeSpan.Zero, 
+            _ => CleanupOldCalls(),
+            null,
+            TimeSpan.Zero,
             ReadDelay);
-        
+
     }
 
     private void CleanupOldCalls()

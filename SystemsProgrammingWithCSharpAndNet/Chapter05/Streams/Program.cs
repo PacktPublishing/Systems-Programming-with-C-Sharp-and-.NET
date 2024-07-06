@@ -1,6 +1,6 @@
 ﻿using System.Text;
-using _02Streams;
 using ExtensionLibrary;
+using Streams;
 
 SerializerSample sample = new();
 var myData = new SerializerSample.MyData()

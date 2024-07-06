@@ -1,6 +1,4 @@
 ﻿
-using _03Security;
-
 string path = @"C:\temp\file.txt";
 
 System.Security.AccessControl.AuthorizationRuleCollection rules;

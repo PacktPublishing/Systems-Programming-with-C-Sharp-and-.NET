@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace _02Streams;
+namespace Streams;
 
 internal class Encryption
 {

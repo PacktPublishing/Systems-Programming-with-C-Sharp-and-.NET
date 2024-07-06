@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace _02Streams;
+namespace Streams;
 
 internal class BufferedSample
 {

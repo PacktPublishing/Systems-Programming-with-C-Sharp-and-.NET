@@ -1,4 +1,4 @@
-﻿namespace _02Streams;
+﻿namespace Streams;
 
 public class FileCreatedEventArgs : EventArgs
 {

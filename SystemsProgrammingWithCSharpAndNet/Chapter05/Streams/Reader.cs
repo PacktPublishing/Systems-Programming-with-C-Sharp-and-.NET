@@ -1,41 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
-namespace _02Streams
+namespace Streams;
+
+internal class Reader
 {
-    internal class Reader
+    public string ReadFromFile(string fileName)
     {
-        public string ReadFromFile(string fileName)
-        {
-            var text = File.ReadAllText(fileName);
-            return text;
-        }
+        var text = File.ReadAllText(fileName);
+        return text;
+    }
 
-        public string ReadWithStream(string fileName)
-        {
-            byte[] fileContent;
+    public string ReadWithStream(string fileName)
+    {
+        byte[] fileContent;
 
-            using (FileStream fs = File.OpenRead(fileName))
+        using (var fs = File.OpenRead(fileName))
+        {
+            fileContent = new byte[fs.Length];
+            var i = 0;
+            var bytesRead = 0;
+            do
             {
-                fileContent = new byte[fs.Length];
-                int i = 0;
-                int bytesRead=0;
-                do
-                {
-                    var myBuffer = new byte[1];
-                    bytesRead = fs.Read(myBuffer, 0, 1);
-                    if(bytesRead > 0)
-                        fileContent[i++] = myBuffer[0];
-                }while(bytesRead > 0);
+                var myBuffer = new byte[1];
+                bytesRead = fs.Read(myBuffer, 0, 1);
+                if (bytesRead > 0)
+                    fileContent[i++] = myBuffer[0];
+            } while (bytesRead > 0);
 
-                fs.Close();
-
-            }
-
-            return Encoding.ASCII.GetString(fileContent);
+            fs.Close();
         }
+
+        return Encoding.ASCII.GetString(fileContent);
     }
 }
