@@ -4,8 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dotnet-_13_WorkerForSetup-6ed36e9d-14eb-4124-89f5-040cde7acf37</UserSecretsId>
-    <RootNamespace>_13_WorkerForSetup</RootNamespace>
+    <UserSecretsId>dotnet-WorkerForSetup-6ed36e9d-14eb-4124-89f5-040cde7acf37</UserSecretsId>
+    <RootNamespace>WorkerForSetup</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

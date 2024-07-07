@@ -4,8 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dotnet-_13_WorkerForDocker-fe01fbf7-2927-412a-9106-50f577a5fe61</UserSecretsId>
-    <RootNamespace>_13_WorkerForDocker</RootNamespace>
+    <UserSecretsId>dotnet-WorkerForDocker-fe01fbf7-2927-412a-9106-50f577a5fe61</UserSecretsId>
+    <RootNamespace>WorkerForDocker</RootNamespace>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
