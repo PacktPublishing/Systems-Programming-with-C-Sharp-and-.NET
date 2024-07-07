@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionLibrary", "ExtensionLibrary\ExtensionLibrary.csproj", "{A29B24EE-3F3F-4837-9CDF-A5EFB96FC68D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerialMonitor", "SerialMonitor\SerialMonitor.csproj", "{2BE55E5B-C9E3-49CD-8E32-A6A48472F9EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A29B24EE-3F3F-4837-9CDF-A5EFB96FC68D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29B24EE-3F3F-4837-9CDF-A5EFB96FC68D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29B24EE-3F3F-4837-9CDF-A5EFB96FC68D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29B24EE-3F3F-4837-9CDF-A5EFB96FC68D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BE55E5B-C9E3-49CD-8E32-A6A48472F9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BE55E5B-C9E3-49CD-8E32-A6A48472F9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BE55E5B-C9E3-49CD-8E32-A6A48472F9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BE55E5B-C9E3-49CD-8E32-A6A48472F9EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43917C91-468E-4DCA-9EF1-8E78143D95A0}
+	EndGlobalSection
+EndGlobal

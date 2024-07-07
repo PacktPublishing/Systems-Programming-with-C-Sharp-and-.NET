@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionLibrary", "ExtensionLibrary\ExtensionLibrary.csproj", "{0BD56094-16CD-4BB2-BDA4-67F4B74531BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging_Default", "Logging_Default\Logging_Default.csproj", "{E0B9CE26-B937-499D-990F-C0FA47B82F38}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging_NLog", "Logging_NLog\Logging_NLog.csproj", "{2FA5C8EB-53F8-4F4D-BEE5-67F5BFB5BC2D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging_Serilog", "Logging_Serilog\Logging_Serilog.csproj", "{FAE13445-2E64-402F-B780-81E34B89C943}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerformanceCounters", "PerformanceCounters\PerformanceCounters.csproj", "{2AB6334D-0A07-4145-9F47-53C61B2420D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prometheus", "Prometheus\Prometheus.csproj", "{98EF421F-3F2E-4E8A-9D38-079270699444}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BD56094-16CD-4BB2-BDA4-67F4B74531BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BD56094-16CD-4BB2-BDA4-67F4B74531BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BD56094-16CD-4BB2-BDA4-67F4B74531BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BD56094-16CD-4BB2-BDA4-67F4B74531BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0B9CE26-B937-499D-990F-C0FA47B82F38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B9CE26-B937-499D-990F-C0FA47B82F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0B9CE26-B937-499D-990F-C0FA47B82F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B9CE26-B937-499D-990F-C0FA47B82F38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FA5C8EB-53F8-4F4D-BEE5-67F5BFB5BC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FA5C8EB-53F8-4F4D-BEE5-67F5BFB5BC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FA5C8EB-53F8-4F4D-BEE5-67F5BFB5BC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FA5C8EB-53F8-4F4D-BEE5-67F5BFB5BC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAE13445-2E64-402F-B780-81E34B89C943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAE13445-2E64-402F-B780-81E34B89C943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAE13445-2E64-402F-B780-81E34B89C943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAE13445-2E64-402F-B780-81E34B89C943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AB6334D-0A07-4145-9F47-53C61B2420D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB6334D-0A07-4145-9F47-53C61B2420D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB6334D-0A07-4145-9F47-53C61B2420D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB6334D-0A07-4145-9F47-53C61B2420D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98EF421F-3F2E-4E8A-9D38-079270699444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98EF421F-3F2E-4E8A-9D38-079270699444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98EF421F-3F2E-4E8A-9D38-079270699444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98EF421F-3F2E-4E8A-9D38-079270699444}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE14F7CA-CBDC-4515-98B1-F1CD317DB9F4}
+	EndGlobalSection
+EndGlobal

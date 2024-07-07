@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "12_AzureKeyVault": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "_AZURE_CLIENT_ID": ""
+      }
+    }
+  }
+}

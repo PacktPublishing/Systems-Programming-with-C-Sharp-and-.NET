@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "12_SecureStrings": {
-      "commandName": "Project",
-      "nativeDebugging": true
-    }
-  }
-}
