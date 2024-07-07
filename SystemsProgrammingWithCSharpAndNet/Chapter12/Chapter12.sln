@@ -3,9 +3,69 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionLibrary", "ExtensionLibrary\ExtensionLibrary.csproj", "{A0FB60B1-58BF-49C5-9561-198BFC5282BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureKeyVault", "AzureKeyVault\AzureKeyVault.csproj", "{34D5176F-EB54-49B7-B899-B7212EF27DE6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigEncryption", "ConfigEncryption\ConfigEncryption.csproj", "{AECF99C8-F10B-4A4F-859E-E9C7CDADD18F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnvironmentVariables", "EnvironmentVariables\EnvironmentVariables.csproj", "{E5025BEB-7DB3-443C-8216-87132BF6BA9B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Impersonation", "Impersonation\Impersonation.csproj", "{4C3350CA-7891-4038-AF67-8AA6784837A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureSocketClient", "SecureSocketClient\SecureSocketClient.csproj", "{CED716BF-52BF-4B7B-97BA-9A834468A36F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureSocketServer", "SecureSocketServer\SecureSocketServer.csproj", "{966B7C03-4847-4192-A0D6-C613F3379C12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecureSockets", "SecureSockets", "{B471056B-1741-4FED-9AA6-DD15BE35AEDF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureStrings", "SecureStrings\SecureStrings.csproj", "{65D73B9D-7CBC-407E-B277-A8E39CAAC320}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0FB60B1-58BF-49C5-9561-198BFC5282BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0FB60B1-58BF-49C5-9561-198BFC5282BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0FB60B1-58BF-49C5-9561-198BFC5282BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0FB60B1-58BF-49C5-9561-198BFC5282BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34D5176F-EB54-49B7-B899-B7212EF27DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34D5176F-EB54-49B7-B899-B7212EF27DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34D5176F-EB54-49B7-B899-B7212EF27DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34D5176F-EB54-49B7-B899-B7212EF27DE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AECF99C8-F10B-4A4F-859E-E9C7CDADD18F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AECF99C8-F10B-4A4F-859E-E9C7CDADD18F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AECF99C8-F10B-4A4F-859E-E9C7CDADD18F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AECF99C8-F10B-4A4F-859E-E9C7CDADD18F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5025BEB-7DB3-443C-8216-87132BF6BA9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5025BEB-7DB3-443C-8216-87132BF6BA9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5025BEB-7DB3-443C-8216-87132BF6BA9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5025BEB-7DB3-443C-8216-87132BF6BA9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C3350CA-7891-4038-AF67-8AA6784837A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C3350CA-7891-4038-AF67-8AA6784837A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C3350CA-7891-4038-AF67-8AA6784837A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C3350CA-7891-4038-AF67-8AA6784837A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED716BF-52BF-4B7B-97BA-9A834468A36F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED716BF-52BF-4B7B-97BA-9A834468A36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED716BF-52BF-4B7B-97BA-9A834468A36F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED716BF-52BF-4B7B-97BA-9A834468A36F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{966B7C03-4847-4192-A0D6-C613F3379C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966B7C03-4847-4192-A0D6-C613F3379C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966B7C03-4847-4192-A0D6-C613F3379C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966B7C03-4847-4192-A0D6-C613F3379C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65D73B9D-7CBC-407E-B277-A8E39CAAC320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65D73B9D-7CBC-407E-B277-A8E39CAAC320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65D73B9D-7CBC-407E-B277-A8E39CAAC320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65D73B9D-7CBC-407E-B277-A8E39CAAC320}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CED716BF-52BF-4B7B-97BA-9A834468A36F} = {B471056B-1741-4FED-9AA6-DD15BE35AEDF}
+		{966B7C03-4847-4192-A0D6-C613F3379C12} = {B471056B-1741-4FED-9AA6-DD15BE35AEDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A725A843-D83A-4A0F-9611-7425AFFF23D5}

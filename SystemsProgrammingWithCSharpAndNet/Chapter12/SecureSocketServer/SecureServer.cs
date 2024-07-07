@@ -6,13 +6,12 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using ExtensionLibrary;
 
-namespace _12_SecureSocketServer;
+namespace SecureSocketServer;
 
 internal class SecureServer
 {
-    private readonly X509Certificate2 _serverCertificate;
-
     private readonly int _port;
+    private readonly X509Certificate2 _serverCertificate;
 
     public SecureServer(int port,
         string certificatePath,
@@ -42,29 +41,29 @@ internal class SecureServer
     {
         try
         {
-            await using var sslStream = 
+            await using var sslStream =
                 new SslStream(
-                    new NetworkStream(clientSocket), 
+                    new NetworkStream(clientSocket),
                     false);
 
             await sslStream.AuthenticateAsServerAsync(
-                _serverCertificate, 
+                _serverCertificate,
                 false,
-                SslProtocols.Tls12, 
+                SslProtocols.Tls12,
                 true);
             $"Client connected: {clientSocket.RemoteEndPoint}".Dump();
 
             var buffer = new byte[1024];
-            var bytesRead = 
+            var bytesRead =
                 await sslStream.ReadAsync(
-                    buffer, 
-                    0, 
+                    buffer,
+                    0,
                     buffer.Length);
 
-            var receivedString = 
+            var receivedString =
                 Encoding.UTF8.GetString(
-                    buffer, 
-                    0, 
+                    buffer,
+                    0,
                     bytesRead);
             $"Received from client: {receivedString}".Dump();
         }

@@ -1,18 +1,14 @@
-﻿using System.Net;
-using System.Net.Sockets;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using _12_SecureSocketServer;
-using ExtensionLibrary;
+﻿using ExtensionLibrary;
+using SecureSocketServer;
 
 "Server is starting...".Dump();
+// Replace this with your actual path to your actual PFX file
 var certificatePath = @"d:\Certificate\testcer.pfx";
 var certificatePassword = "password";
 
 var server = new SecureServer(
-    8081, 
-    certificatePath, 
+    8081,
+    certificatePath,
     certificatePassword);
 
 await server.StartAsync();
-

@@ -4,7 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using ExtensionLibrary;
 
-namespace _12_SecureSocketClient;
+namespace SecureSocketClient;
 
 internal class SecureClient
 {
@@ -12,7 +12,7 @@ internal class SecureClient
     private readonly string _server;
 
     public SecureClient(
-        string server, 
+        string server,
         int port)
     {
         _server = server;
@@ -44,7 +44,7 @@ internal class SecureClient
         }
     }
 
-    private static bool ValidateServerCertificate(object sender, 
+    private static bool ValidateServerCertificate(object sender,
         X509Certificate certificate, X509Chain chain,
         SslPolicyErrors sslPolicyErrors)
     {

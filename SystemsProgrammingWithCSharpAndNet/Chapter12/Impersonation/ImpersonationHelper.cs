@@ -5,7 +5,7 @@ using Microsoft.Win32.SafeHandles;
 
 #pragma warning disable CA1416
 
-namespace _12_Impersontation;
+namespace Impersontation;
 
 internal class ImpersonationHelper
 {
@@ -23,20 +23,20 @@ internal class ImpersonationHelper
         out SafeAccessTokenHandle phToken);
 
     [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
-    public static extern bool CloseHandle(IntPtr handle);
+    public static extern bool CloseHandle(nint handle);
 
     public static void RunAsAdmin(
-        string userName, 
-        string domain, 
-        string password, 
+        string userName,
+        string domain,
+        string password,
         Action action)
     {
         var returnValue = LogonUser(
-            userName, 
-            domain, 
-            password, 
+            userName,
+            domain,
+            password,
             LOGON32_LOGON_BATCH,
-            LOGON32_PROVIDER_DEFAULT, 
+            LOGON32_PROVIDER_DEFAULT,
             out var safeAccessTokenHandle);
         if (!returnValue)
         {

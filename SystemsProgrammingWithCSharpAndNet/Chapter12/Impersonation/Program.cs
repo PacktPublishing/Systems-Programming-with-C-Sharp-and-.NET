@@ -1,14 +1,14 @@
 ﻿// Get the name of the current user
 
-using _12_Impersontation;
 using ExtensionLibrary;
+using Impersontation;
 
 var userName = Environment.UserName;
 $"Current user: {userName}".Dump();
 
 var adminUserName = "MySecureAdmin";
-var domain = "dennis-beast";
-var password = "Welcome@1";
+var domain = "yourdomain";
+var password = "YourPassword";
 
 ImpersonationHelper.RunAsAdmin(
     adminUserName, domain, password, () =>

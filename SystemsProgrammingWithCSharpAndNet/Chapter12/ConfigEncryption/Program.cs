@@ -3,9 +3,8 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-
 var myKeyFolder = Path.Combine(Directory.GetCurrentDirectory(), "MyKeys");
-if(!Directory.Exists(myKeyFolder))
+if (!Directory.Exists(myKeyFolder))
     Directory.CreateDirectory(myKeyFolder);
 
 var serviceCollection = new ServiceCollection();
@@ -33,7 +32,7 @@ foreach (var key in secretSection.GetChildren())
     var originalValue = key.Value;
     var encryptedValue = dataProtector.Protect(originalValue);
     var oldValue = $"\"{key.Key}\": \"{originalValue}\"";
-    var newValue = $"\"{key.Key}\": \"{encryptedValue}\""; 
+    var newValue = $"\"{key.Key}\": \"{encryptedValue}\"";
     json = json.Replace(oldValue, newValue);
 }
 
