@@ -1,6 +1,4 @@
-using _14_CrossPlatformService;
-using Mono.Unix;
-using Mono.Unix.Native;
+using CrossPlatformService;
 
 public class Program
 {
@@ -8,7 +6,6 @@ public class Program
 
     public static void Main(string[] args)
     {
-        
         var builder = Host.CreateApplicationBuilder(args);
         builder.Services.AddHostedService<Worker>();
 
@@ -16,5 +13,4 @@ public class Program
 
         host.Run();
     }
-
 }

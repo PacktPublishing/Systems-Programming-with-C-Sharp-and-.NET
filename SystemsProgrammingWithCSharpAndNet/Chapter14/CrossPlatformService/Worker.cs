@@ -2,7 +2,7 @@ using ExtensionLibrary;
 using Mono.Unix;
 using Mono.Unix.Native;
 
-namespace _14_CrossPlatformService;
+namespace CrossPlatformService;
 
 public class Worker : BackgroundService
 {
@@ -46,8 +46,8 @@ public class Worker : BackgroundService
     private void RegisterSignalHandlers()
     {
         // This is the default behavior for SIGTERM
-        AppDomain.CurrentDomain.ProcessExit += 
-            (sender, eventArgs) => $"Process exit".Dump();
+        AppDomain.CurrentDomain.ProcessExit +=
+            (sender, eventArgs) => "Process exit".Dump();
 
         // Handle the signals
         UnixSignal[] signals =

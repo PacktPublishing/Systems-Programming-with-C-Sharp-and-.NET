@@ -4,8 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dotnet-_14_CrossPlatformService-19cbabb3-03ff-4bd8-82f5-3f8b5628c4a0</UserSecretsId>
-    <RootNamespace>_14_CrossPlatformService</RootNamespace>
+    <UserSecretsId>dotnet-CrossPlatformService-19cbabb3-03ff-4bd8-82f5-3f8b5628c4a0</UserSecretsId>
+    <RootNamespace>CrossPlatformService</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Extensions\ExtensionLibrary\ExtensionLibrary.csproj" />
+    <ProjectReference Include="..\ExtensionLibrary\ExtensionLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>

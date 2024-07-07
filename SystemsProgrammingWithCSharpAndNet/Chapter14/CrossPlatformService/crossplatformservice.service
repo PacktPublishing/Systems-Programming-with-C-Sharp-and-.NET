@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=/home/dvroegop/service
-ExecStart=/usr/bin/dotnet /home/dvroegop/service/14_CrossPlatformService.dll
+ExecStart=/usr/bin/dotnet /home/dvroegop/service/CrossPlatformService.dll
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:
 RestartSec=10
