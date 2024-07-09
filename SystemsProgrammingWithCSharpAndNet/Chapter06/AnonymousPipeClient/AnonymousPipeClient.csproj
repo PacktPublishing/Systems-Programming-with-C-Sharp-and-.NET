@@ -6,6 +6,7 @@
     <RootNamespace>AnonymousPipeClient</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <BaseOutputPath>C:\temp\PipeClient</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
